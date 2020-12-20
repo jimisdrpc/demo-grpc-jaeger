@@ -1,0 +1,8 @@
+micronaut:
+  application:
+    name: demoGrpcJaeger
+tracing:
+  jaeger:
+    enabled: true
+    sampler:
+      probability: 0.1

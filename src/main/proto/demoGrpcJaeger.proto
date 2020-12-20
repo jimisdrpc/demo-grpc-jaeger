@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.tolearn";
+option java_outer_classname = "DemoGrpcJaeger";
+option objc_class_prefix = "HLW";
+
+package com.tolearn;
+
+service DemoGrpcJaegerService {
+  rpc send (DemoGrpcJaegerRequest) returns (DemoGrpcJaegerReply) {}
+}
+
+message DemoGrpcJaegerRequest {
+  string name = 1;
+}
+
+message DemoGrpcJaegerReply {
+  string message = 1;
+}
