@@ -30,7 +30,7 @@ micronaut {
 
 dependencies {
 
-    implementation("io.grpc:protoc-gen-grpc-kotlin:1.0.0")
+    //implementation("io.grpc:protoc-gen-grpc-kotlin:1.0.0")
 
     implementation("io.micronaut:micronaut-validation")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
@@ -61,6 +61,7 @@ tasks {
         kotlinOptions {
             jvmTarget = "11"
         }
+        dependsOn ':generateProto'
     }
     compileTestKotlin {
         kotlinOptions {
@@ -85,7 +86,7 @@ protobuf {
     protoc { artifact = "com.google.protobuf:protoc:3.14.0" }
     plugins {
         grpc { artifact = "io.grpc:protoc-gen-grpc-java:1.33.1" }
-        grpckt { artifact = "io.grpc:protoc-gen-grpc-kotlin:1.0.0" }
+        grpckt { artifact = "io.grpc:protoc-gen-grpc-kotlin:1.0.0:jdk7@jar"}
     }
     generateProtoTasks {
         all()*.plugins {
