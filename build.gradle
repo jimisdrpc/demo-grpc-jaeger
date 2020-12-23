@@ -24,13 +24,16 @@ micronaut {
 }
 
 //https://stackoverflow.com/a/55646891/4148175
+//https://kotlinlang.org/docs/reference/kapt.html
 //kapt {
 //    correctErrorTypes true
+//    useBuildCache = false
 //}
 
 dependencies {
 
-    //implementation("io.grpc:protoc-gen-grpc-kotlin:1.0.0")
+    implementation("io.grpc:protoc-gen-grpc-kotlin:1.0.0")
+    api("io.grpc:grpc-kotlin-stub:1.0.0")
 
     implementation("io.micronaut:micronaut-validation")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
